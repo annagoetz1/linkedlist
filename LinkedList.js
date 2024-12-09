@@ -93,7 +93,15 @@ export default class LinkedList {
         return value;
     }
     
+    contains (value) {
+        let current = this.head;
+        if (this.head === null){
+            return null;
     
+        } while(current.value !== value) {
+            current = current.nextNode;
+        }
+    }
 
     display() {
         let current = this.head;
