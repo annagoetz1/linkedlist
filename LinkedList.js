@@ -102,6 +102,20 @@ export default class LinkedList {
             current = current.nextNode;
         }
     }
+number (value) {
+    let current = this.head;
+    let index = 0;
+    if (current.value === null){
+        return null;    
+    } while (current.value !== value){
+        current = nextNode;
+        index ++;
+        if (current.value === value) {
+            return index;
+        }
+    }
+}
+
 
     display() {
         let current = this.head;
