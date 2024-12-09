@@ -48,7 +48,7 @@ export default class LinkedList {
             return null;
         }
         while (current.nextNode !== null) {
-           current = current.NextNode;
+           current = current.nextNode;
             
             return current.value;
                 }
@@ -62,10 +62,35 @@ export default class LinkedList {
             if(current.value === value){
                 return index;
             }
-            current = current.NextNode;
+            current = current.nextNode;
             index++;
         }
         return -1;
+    }
+    
+    pop() {
+        if (this.head === null) {
+            console.log("List is empty, nothing to pop.");
+            return null;
+        }
+    
+        // Case 1: List has only one node
+        if (this.head.nextNode === null) {
+            const value = this.head.value; // Save value to return
+            this.head = null; // Set head to null, list becomes empty
+            return value;
+        }
+    
+        // Case 2: Traverse to find the second-to-last node
+        let current = this.head;
+        while (current.nextNode.nextNode !== null) { // Stop at second-to-last node
+            current = current.nextNode;
+        }
+    
+        // Save the value of the tail node to return
+        const value = current.nextNode.value;
+        current.nextNode = null; // Remove the last node by setting nextNode to null
+        return value;
     }
     
     
