@@ -24,6 +24,51 @@ export default class LinkedList {
         this.head = newNode; // Update the head to the new node
     }
 
+    size() {
+        let count = 0;           // Initialize counter
+        let current = this.head; // Start at the head of the list
+    
+        while (current !== null) { // Traverse the list
+            count++;              // Increment counter for each node
+            current = current.nextNode; // Move to the next node
+        }
+    
+        return count; // Return the total count
+    }
+    head() {
+        if (this.head === null) { // Check if the list is empty
+            return null;          // Return null or an appropriate message
+        }
+        return this.head.value;   // Return the value of the head node
+    }
+    tail () {
+       
+        let current = this.head;
+        if (current === null) {
+            return null;
+        }
+        while (current.nextNode !== null) {
+           current = current.NextNode;
+            
+            return current.value;
+                }
+            }
+
+    index (value){
+        let current=this.head;
+        let index=0;
+        while(current !== null){
+            if(current.value === value){
+                return index;
+            }
+            current = current.NextNode;
+            index++;
+        }
+        return -1;
+    }
+    
+    
+
     display() {
         let current = this.head;
         const values = [];
