@@ -53,6 +53,7 @@ export default class LinkedList {
             return current.value;
                 }
             }
+            
 
     index (value){
         let current=this.head;
