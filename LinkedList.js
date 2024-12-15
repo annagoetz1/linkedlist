@@ -94,14 +94,20 @@ export default class LinkedList {
         return value;
     }
     
-    contains (value) {
+    contains(value) {
         let current = this.head;
-        if (this.head === null){
-            return null;
-    
-        } while(current.value !== value) {
-            current = current.nextNode;
+        if (current === null) {
+            return false;  // Return false if the list is empty
         }
+        
+        while (current !== null) {
+            if (current.value === value) {
+                return true;  // Return true if value is found
+            }
+            current = current.nextNode;  // Move to the next node
+        }
+        
+        return false;  // Return false if value is not found after traversing the list
     }
 number (value) {
     let current = this.head;
