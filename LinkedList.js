@@ -49,9 +49,10 @@ export default class LinkedList {
         }
         while (current.nextNode !== null) {
            current = current.nextNode;
-            
-            return current.value;
+       
                 }
+                     
+            return current.value;
             }
             
 
